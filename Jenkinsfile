@@ -17,6 +17,7 @@ pipeline {
                 script{
                     def dockerHome = tool 'test-docker'
                     env.PATH = "${dockerHome}/bin:${env.PATH}"
+                    usermod -a -G docker jenkins
                 }
             }  
         }
